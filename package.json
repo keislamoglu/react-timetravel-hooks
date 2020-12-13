@@ -1,5 +1,5 @@
 {
-  "name": "react-countdown-hooks",
+  "name": "react-timetravel-hooks",
   "version": "0.1.0",
   "dependencies": {
     "countdown": "^2.6.0",

@@ -7,7 +7,7 @@ React countdown hooks being developed by using the awesome library [mckamey/coun
 * use countdown with less and easier configuration
 * calculate the remaining time
 
-# Progress
+## Progress
 
 This project is currently in the progress of development. However, you can clone and use the hooks freely.
 You can follow the process by the following checklist:
