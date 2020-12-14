@@ -60,14 +60,15 @@ export function useRemainingTime(
     max,
     units,
   ])
-  const [remaining, setRemaining] = useState(calculateRemaining())
+  const [remaining, setRemaining] = useState<string>()
 
   useEffect(() => {
+    setRemaining(calculateRemaining())
     const timer = setInterval(() => setRemaining(calculateRemaining()), tickDuration)
     return () => clearInterval(timer)
   }, [calculateRemaining, tickDuration])
 
-  return remaining
+  return remaining || ''
 }
 
 function isFormatter(
