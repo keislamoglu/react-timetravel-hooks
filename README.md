@@ -5,7 +5,7 @@ React countdown hooks being developed by using the awesome library [mckamey/coun
 ## You will be able to
 
 * use countdown with less and easier configuration
-* calculate the remaining time
+* get the remaining time in real-time by just giving the end date
 
 ## Progress
 
