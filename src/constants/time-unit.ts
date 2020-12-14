@@ -1,4 +1,4 @@
-import { TimeUnit } from '../interfaces/time-unit'
+import { TimeUnit } from '../interfaces'
 
 export enum TimeUnitLabelIndex {
   Singular = 0,

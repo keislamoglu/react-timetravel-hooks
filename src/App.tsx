@@ -1,8 +1,8 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { useCountdown, useRemainingTime } from './hooks/countdown'
-import { TimeUnitLabelMapping } from './interfaces/time-unit'
+import { useCountdown, useRemainingTime } from './hooks'
+import { TimeUnitLabelMapping } from './interfaces'
 
 function App() {
   const labels: TimeUnitLabelMapping = {
