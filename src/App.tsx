@@ -2,10 +2,10 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 import { useCountdown, useRemainingTime } from './hooks'
-import { TimeUnitLabelMapping } from './interfaces'
+import { TimeUnitLabelDefinition } from './interfaces'
 
 function App() {
-  const labels: TimeUnitLabelMapping = {
+  const labels: TimeUnitLabelDefinition = {
     millennia: ['binyıl', 'binyıl', 'by'],
     centuries: ['yüzyıl', 'yüzyıl', 'yy'],
     decades: ['onyıl', 'onyıl', 'oy'],

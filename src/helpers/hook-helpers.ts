@@ -1,13 +1,8 @@
-import { TimeUnitLabelMapping } from '../interfaces'
+import { TimeUnit, TimeUnitLabelDefinition } from '../interfaces'
 import { TimeUnitLabelIndex, TimeUnits } from '../constants/time-unit'
-import countdown from 'countdown'
 
-type Format = countdown.Format
-
-export function isFormatter(
-  labelsOrFormatter: TimeUnitLabelMapping | Format['formatter']
-): labelsOrFormatter is Format['formatter'] {
-  return typeof labelsOrFormatter === 'function'
+export function isTimeUnitLabelDefinition(value: unknown): value is TimeUnitLabelDefinition {
+  return value != null && TimeUnits.every((t: TimeUnit) => !!(value as TimeUnitLabelDefinition)[t])
 }
 
 type SingularLabels = string
@@ -15,7 +10,7 @@ type PluralLabels = string
 type AbbreviationLabels = string
 
 export function timeUnitLabelsToCountdownLabels(
-  labels: TimeUnitLabelMapping
+  labels: TimeUnitLabelDefinition
 ): [SingularLabels, PluralLabels, AbbreviationLabels] {
   const timeUnitLabels = TimeUnits.map((t) => labels[t])
   const countdownLabels: [string[], string[], string[]] = [[], [], []]

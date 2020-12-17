@@ -15,4 +15,4 @@ export type TimeUnit =
   | 'centuries'
   | 'millennia'
 
-export type TimeUnitLabelMapping = Record<TimeUnit, [SingularLabel, PluralLabel, AbbreviationLabel]>
+export type TimeUnitLabelDefinition = Record<TimeUnit, [SingularLabel, PluralLabel, AbbreviationLabel]>
