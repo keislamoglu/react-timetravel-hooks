@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import countdown from 'countdown'
 import { FormatOptions, TimeUnitLabelDefinition } from '../interfaces'
 import { isTimeUnitLabelDefinition, timeUnitLabelsToCountdownLabels } from '../helpers/hook-helpers'
@@ -7,14 +7,14 @@ type CountdownStatic = countdown.CountdownStatic
 type Format = countdown.Format
 
 export function useCountdown(
-  shortNotation: boolean,
   labels: TimeUnitLabelDefinition,
+  shortNotation?: boolean,
   formatOptions?: FormatOptions
 ): CountdownStatic
 
 export function useCountdown(
-  shortNotation: boolean,
   formatter: Format['formatter'],
+  shortNotation?: boolean,
   formatOptions?: FormatOptions
 ): CountdownStatic
 
@@ -24,12 +24,16 @@ export function useCountdown(
  * Hence, using the returned countdown by this hook will be the same as the imported one in a component.
  */
 export function useCountdown(
-  shortNotation = false,
   labelsOrFormatter: TimeUnitLabelDefinition | Format['formatter'],
+  shortNotation = false,
   { last = ' ', delim = ' ' }: FormatOptions = {}
 ): CountdownStatic {
   const isCountdownFormatted = useRef(false)
   const format: Format = { last, delim }
+
+  useEffect(() => {
+    isCountdownFormatted.current = false
+  }, [labelsOrFormatter, shortNotation])
 
   if (isTimeUnitLabelDefinition(labelsOrFormatter)) {
     const [singulars, plurals, abbreviations] = timeUnitLabelsToCountdownLabels(labelsOrFormatter)
