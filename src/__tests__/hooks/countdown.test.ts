@@ -30,7 +30,7 @@ test('formats countdown with given labels', () => {
   }
 
   jest.spyOn(countdown, 'setFormat')
-  const { result } = renderHook(() => useCountdown(false, dummyLabels))
+  const { result } = renderHook(() => useCountdown(dummyLabels))
 
   expect(countdown.setFormat).toHaveBeenCalledWith(expectedFormat)
   expect(countdown).toBe(result.current)
@@ -45,7 +45,7 @@ test('formats countdown with the abbreviation labels', () => {
   }
 
   jest.spyOn(countdown, 'setFormat')
-  const { result } = renderHook(() => useCountdown(true, dummyLabels))
+  const { result } = renderHook(() => useCountdown(dummyLabels, true))
 
   expect(countdown.setFormat).toHaveBeenCalledWith(expectedFormat)
   expect(countdown).toBe(result.current)
