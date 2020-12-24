@@ -3,8 +3,6 @@ import { RemainingTimeHookOptions } from '../../interfaces'
 import { renderHook } from '@testing-library/react-hooks'
 
 test('calculates and returns remaining time in string format', () => {
-  jest.unmock('countdown')
-
   const endDate = new Date()
 
   endDate.setDate(endDate.getDate() + 1)
@@ -18,4 +16,15 @@ test('calculates and returns remaining time in string format', () => {
   const remaining = result.current
 
   expect(remaining).toEqual('1 day, 3 hours and 15 minutes')
+})
+
+test('returns empty string when the remaining time is up', () => {
+  const endDate = new Date()
+
+  endDate.setSeconds(endDate.getSeconds() - 1)
+
+  const { result } = renderHook(() => useRemainingTime(endDate))
+  const remaining = result.current
+
+  expect(remaining).toEqual('')
 })
