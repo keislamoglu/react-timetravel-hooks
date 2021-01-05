@@ -13,9 +13,9 @@ This project is currently in the progress of development. However, you can clone
 You can follow the process by the following checklist:
 
 - [x] General structure
-- [ ] Unit tests
-- [ ] Ensure SOLID principles
-- [ ] Refactor the file and project structure to be only a hooks library
+- [x] Unit tests
+- [x] Ensure SOLID principles
+- [x] Refactor the file and project structure to be only a hooks library
 - [ ] Performance optimization
 - [ ] Publish to NPM
 
