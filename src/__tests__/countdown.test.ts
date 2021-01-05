@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks'
-import { useCountdown } from '../../hooks'
-import { TimeUnitLabelDefinition } from '../../interfaces'
+import { useCountdown } from '../index'
+import { TimeUnitLabelDefinition } from '../interfaces'
 import countdown from 'countdown'
 
 const dummyLabels: TimeUnitLabelDefinition = {

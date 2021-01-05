@@ -1,5 +1,5 @@
-import { useRemainingTime } from '../../hooks'
-import { RemainingTimeHookOptions } from '../../interfaces'
+import { useRemainingTime } from '../index'
+import { RemainingTimeHookOptions } from '../interfaces'
 import { renderHook } from '@testing-library/react-hooks'
 
 test('calculates and returns remaining time in string format', () => {

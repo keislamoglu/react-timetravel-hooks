@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import countdown from 'countdown'
-import { FormatOptions, TimeUnitLabelDefinition } from '../interfaces'
-import { isTimeUnitLabelDefinition, timeUnitLabelsToCountdownLabels } from '../helpers/hook-helpers'
+import { FormatOptions, TimeUnitLabelDefinition } from './interfaces'
+import { isTimeUnitLabelDefinition, timeUnitLabelsToCountdownLabels } from './helpers/hook-helpers'
 
 type CountdownStatic = countdown.CountdownStatic
 type Format = countdown.Format

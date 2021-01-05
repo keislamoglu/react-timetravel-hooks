@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import countdown from 'countdown'
-import { RemainingTimeHookOptions } from '../interfaces'
+import { RemainingTimeHookOptions } from './interfaces'
 
 export function useRemainingTime(endDate: Date, options: RemainingTimeHookOptions = {}): string {
   const { max = 2, units = countdown.DEFAULTS, tickDuration = 1000 } = options
